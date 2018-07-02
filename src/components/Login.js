@@ -5,6 +5,7 @@ class Login extends Component {
     return (
 <div> 
     Login Form
+    <lablel> Name: </lablel>
 </div>
 
     );
