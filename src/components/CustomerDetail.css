@@ -1,0 +1,28 @@
+col-form-label {
+    padding-right: 15rem !important; 
+    display: flex !important;
+    padding-left:9rem !important;
+    /* -webkit-box-sizing: unset !important; */
+}
+
+select {
+    width: 39%;
+    height:2.5rem;
+    padding: 10px ;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+label{
+    padding-right: 15rem !important; 
+    display: flex !important;
+    padding-left: 7rem !important;
+    line-height: 0rem;
+    margin-bottom: -0.5rem !important;
+    /* margin-left: 0 !important; */
+    /* padding-right: 0rem!important;  */
+    /* margin-top: 0%;*/
+} 
+.pad-left{
+    padding-left: 2rem;
+}

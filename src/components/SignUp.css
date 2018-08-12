@@ -1,0 +1,10 @@
+.form-control {
+    width: 50% !important;
+    display:inline-block  !important;
+  }
+  
+  .col-form-label {
+   
+    display: flex !important;
+    padding-inline-start: 7rem !important;
+}
