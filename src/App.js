@@ -7,7 +7,7 @@ import Register from './components/Register.js'
 import CreditScore from './components/CreditScore.js'
 import {  Route,  NavLink,  HashRouter } from "react-router-dom";
 import { Button, ButtonToolbar ,Navbar,Nav,NavItem,NavDropdown,MenuItem} from 'react-bootstrap';
-import Form from './Form.js'
+// import Form from './Form.js'
 import RegisterCustomer from './components/RegisterCustomer.js'
 import CustomerDetail from './components/CustomerDetail.js'
 
