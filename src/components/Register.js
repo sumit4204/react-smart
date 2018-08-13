@@ -46,12 +46,17 @@ class SignUp extends Component {
 render()
     {
         return(
+            <div>
+                <br/>
             <Form>
+            <br/>
             <FormGroup row>
+            <br/>
             <Label for="uname" sm={2}>OrganizationName</Label>
             <Col sm={10}>
               <Input type="text" name="user" id="uname" placeholder="Enter OrganizationName"  onChange={this.onChangeEvent} />
             </Col>
+            
           </FormGroup>
           <FormGroup row>
             <Label for="pass" sm={2}>OrganizationPassword</Label>
@@ -72,7 +77,7 @@ render()
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="contact" sm={2}>Organization Registration Number</Label>
+            <Label for="contact" sm={5}>Organization RegNo.</Label>
             <Col sm={10}>
               <Input type="number" name="con" id="contact" placeholder="Enter Organization Registration number" onChange={this.onChangeEvent} />
             </Col>
@@ -83,6 +88,7 @@ render()
          </Col>
        </FormGroup>
      </Form>
+     </div>
  
         );
     }
