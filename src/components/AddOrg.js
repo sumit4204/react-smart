@@ -23,6 +23,28 @@ class AddOrg extends Component {
 				"constant": false,
 				"inputs": [
 					{
+						"name": "_custAddress",
+						"type": "address"
+					},
+					{
+						"name": "_custName",
+						"type": "string"
+					},
+					{
+						"name": "scrImpact",
+						"type": "int256"
+					}
+				],
+				"name": "addCustomerDetails",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
 						"name": "orgAddress",
 						"type": "address"
 					},
@@ -39,6 +61,48 @@ class AddOrg extends Component {
 				"outputs": [],
 				"payable": false,
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_custAddress",
+						"type": "address"
+					}
+				],
+				"name": "getCustomerDetails",
+				"outputs": [
+					{
+						"name": "",
+						"type": "int256"
+					},
+					{
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "_custAddress",
+						"type": "address"
+					}
+				],
+				"name": "getCustomerRating",
+				"outputs": [
+					{
+						"name": "",
+						"type": "int256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -66,7 +130,7 @@ class AddOrg extends Component {
 			}
 		]);
 
-		this.state.contractInstance = smartContract.at('0x8b008898e061c77bceeb972afb4c9675e162d701');
+		this.state.contractInstance = smartContract.at('0x3c857430e54a6a43d381d1923a211465013edcdd');
 
 
 	}
@@ -84,7 +148,7 @@ class AddOrg extends Component {
 
 		this.state.contractInstance.addOrganization(this.state.orgAddress, this.state.orgName, this.state.orgId, {
 			gas: 300000,
-			from: '0x7a458e9dab172cf5c19df42a905687cec252aa3a'
+			 from: '0x36e49682b813b42cb459b92f3932f43c70f817d7'
 		}, (err, result) => {
 			if(result) {
 				console.log("organization added");
@@ -101,6 +165,7 @@ class AddOrg extends Component {
 		this.state.contractInstance.getOrganization(this.state.orgAddress, {
 			gas: 300000
 		}, (err, result) => {
+			console.log(result);
 			console.log(result[0], result[1]);
 		});
 	}
