@@ -35,7 +35,12 @@ render()
     {
         return(
     <Form>
+        
+        <br/>
+        <br/>
+        <br/>
     <FormGroup row>
+        
     <Label for="pubkey" sm={1}>PublicKey</Label>
     <Col sm={10}>
       <Input type="number" name="custPublicKey" id="pubkey" placeholder="Enter public key"  onChange={this.onChangeEvent} />

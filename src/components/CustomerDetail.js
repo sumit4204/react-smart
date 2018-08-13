@@ -53,19 +53,30 @@ render()
     {
         return(
     <Form>
+        <br/>
+        <br/>
     <FormGroup row>
+        <br/>
+        <br/>
     <Label for="uname">  Username</Label>
       <Input type="text" name="user" id="uname" placeholder="Enter username"  onChange={this.onChangeEvent} />
   </FormGroup>
+  <br/>
   <FormGroup row>
+  <br/>
     <Label for="custPublicKey" >  Public Key</Label>
       <Input type="number" name="custPublicKey" id="custPublicKey" placeholder="Enter public key" onChange={this.onChangeEvent} />
   </FormGroup>
+  <br/>
   <FormGroup row>
     <Label for="id1" >  Id number</Label>
+    <br/>
       <Input type="text" name="id" id="id1" placeholder="Enter id number" onChange={this.onChangeEvent} />
+      <br/>          
   </FormGroup>
   <FormGroup>
+      <br/>
+      <br/>
       <span>
           <Label for="accType" class="pad-left">Account Type</Label>
           <select name="accType" id="accType" defaultValue="please select" onChange={this.onChangeEvent}>
@@ -76,6 +87,8 @@ render()
           </select>
           </span>
         </FormGroup>
+        <br/>
+        <br/>
         <FormGroup>
           <Label for="paymentsDue" class="pad-left">Payments Due</Label>
           <select  name="paymentsDue" id="paymentsDue" defaultValue="please select" onChange={this.handleChange} >

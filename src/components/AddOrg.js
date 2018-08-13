@@ -66,7 +66,7 @@ class AddOrg extends Component {
 			}
 		]);
 
-		this.state.contractInstance = smartContract.at('0x8b008898e061c77bceeb972afb4c9675e162d701');
+		this.state.contractInstance = smartContract.at('0xcdedcca47a4b20e5551f4a5ec8bc60e69ee73cf6');
 
 
 	}
@@ -84,7 +84,7 @@ class AddOrg extends Component {
 
 		this.state.contractInstance.addOrganization(this.state.orgAddress, this.state.orgName, this.state.orgId, {
 			gas: 300000,
-			from: '0x7a458e9dab172cf5c19df42a905687cec252aa3a'
+			from: '0x9af2d2773b09cfbfa0b95946186466f9ed3aeb49'
 		}, (err, result) => {
 			if(result) {
 				console.log("organization added");
@@ -125,7 +125,9 @@ class AddOrg extends Component {
 		return (
 			<div>
 				<div className="container">
-
+<br/>
+<br/>
+<br/>
 					<input
 						type="text"
 						name="orgId"
@@ -133,6 +135,8 @@ class AddOrg extends Component {
 						value={this.state.orgId}
 						onChange={this.handleChange}
 					/>
+					<br/>
+					<br/>
 
 					<input
 						type="text"
@@ -141,6 +145,8 @@ class AddOrg extends Component {
 						value={this.state.orgName}
 						onChange={this.handleChange}
 					/>
+					<br/>
+					<br/>
 
 					<input
 						type="text"
@@ -149,11 +155,13 @@ class AddOrg extends Component {
 						value={this.state.orgAddress}
 						onChange={this.handleChange}
 					/>
+					<br/>
 
-
-
+<br/>
 
 					<button id="button" onClick={this.addOrgClick}>Add Organization</button>
+					<br/>
+					<br/>
 					<button id="getButton" onClick={this.getOrgClick}>Get Organization</button>
 				</div>
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Login.css'
+import './Login.css';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 class Login extends Component {
@@ -29,7 +29,10 @@ render()
     {
         return(
             <Form>
+              <br/>
              <FormGroup row>
+               <br/>
+               <br/>
              <Label for="uname" sm={2}>Username</Label>
              <Col sm={10}>
                <Input type="text" name="uname" id="uname" placeholder="Enter username"  onChange={this.onChangeEvent} />
