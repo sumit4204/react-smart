@@ -4,10 +4,10 @@ import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap
 import Web3 from 'web3';
 class CustomerDetail extends Component {
     constructor(props) {
-      
-        
+
+
         super(props);
-        
+
     this.state={
         uname:"",
         id:"",
@@ -135,7 +135,7 @@ class CustomerDetail extends Component {
 			}
 		]);
 
-		this.state.contractInstance = smartContract.at('0x3c857430e54a6a43d381d1923a211465013edcdd');
+		this.state.contractInstance = smartContract.at('0xdd0d5a6429d764359ce5ba0d0610217b94a2e00a');
 
 
 }
@@ -144,7 +144,7 @@ onChangeEvent = ({target}) => {
     this.setState({[target.name] : target.value});
     console.log("onchange called");
     }
-   
+
 
 
     onSubmit= () =>{
@@ -158,7 +158,7 @@ onChangeEvent = ({target}) => {
 
         this.state.contractInstance.addCustomerDetails(this.state.custPublicKey, this.state.uname, this.state.clicks, {
 			gas: 300000,
-			 from: '0x36e49682b813b42cb459b92f3932f43c70f817d7'
+			 from: '0x4be1dc36393f993f08131c887b43fb24b0c66840'
 		}, (err, result) => {
 			if(result) {
 				console.log("Customer details added");
@@ -169,46 +169,43 @@ onChangeEvent = ({target}) => {
     }
 
     handleChange = (e) => {
-      
+
         this.setState({selectValue:e.target.value});
         if(e.target.value === "default") {
-            this.setState({clicks:1});
+            this.setState({clicks:2});
 
         } else {
-            this.setState({clicks:2});
+            this.setState({clicks:1});
         }
-    } 
+    }
 
 render()
     {
         return(
-    <Form>
-        <br/>
-        <br/>
-    <FormGroup row>
-        <br/>
-        <br/>
-    <Label for="uname">  Username</Label>
-      <Input type="text" name="user" id="uname" placeholder="Enter username"  onChange={this.onChangeEvent} />
-  </FormGroup>
-  <br/>
-  <FormGroup row>
-  <br/>
-    <Label for="custPublicKey" >  Public Key</Label>
-      <Input type="text" name="custPublicKey" id="custPublicKey" placeholder="Enter public key" onChange={this.onChangeEvent} />
-  </FormGroup>
-  <br/>
-  <FormGroup row>
-    <Label for="id1" >  Id number</Label>
-    <br/>
-      <Input type="text" name="id" id="id1" placeholder="Enter id number" onChange={this.onChangeEvent} />
-      <br/>          
-  </FormGroup>
-  <FormGroup>
+<Form className="background8">
+
+<div className="pad-top8">
+
+	  <div className="form-header warm-flame-gradient rounded ">
+		  <h3 className="my-3"><i className="fa"></i>ADD CUSTOMER</h3>
+	  </div>
+	 <div className="fix">
+	  <lab for="uname" className=" grey-text ">Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</lab>
+	  <input type="text" id="uname" name="uname" placeholder="Enter username"  onChange={this.onChangeEvent}/>
+	  </div>
+	<div class="fix">
+	  <lab for="custPublicKey" className=" grey-text ">Customer key</lab>
+	  <input type="text"name="custPublicKey" id="custPublicKey" placeholder="Enter Customer Key" onChange={this.onChangeEvent} />
+ </div>
+ <div class="fix">
+ <lab for="id" className=" grey-text ">Identifier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</lab>
+	  <input type="text"name="id" id="id" placeholder="Enter id" onChange={this.onChangeEvent} />
+</div>
+<FormGroup>
       <br/>
       <br/>
       <span>
-          <Label for="accType" class="pad-left">Account Type</Label>
+          <lab for="accType" class="pad-left grey-text">Account Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</lab>
           <select name="accType" id="accType" defaultValue="please select" onChange={this.onChangeEvent}>
           <option value="please select" >please select account type</option>
           <option value="loan">Laon</option>
@@ -220,7 +217,7 @@ render()
         <br/>
         <br/>
         <FormGroup>
-          <Label for="paymentsDue" class="pad-left">Payments History</Label>
+          <lab for="paymentsDue" class="pad-left grey-text">Payments History&nbsp;&nbsp;</lab>
           <select  name="paymentsDue" id="paymentsDue" defaultValue="please select" onChange={this.handleChange} >
           <option value="please select" >please select </option>
           <option value="default" name = 'default' >Late</option>
@@ -228,14 +225,13 @@ render()
           </select>
         </FormGroup>
 
-  <FormGroup check row>
- <Col sm={{ size: 10}}>
-   <Button onClick={() => this.onSubmit()}>Submit</Button>
- </Col>
-</FormGroup>
+<div className="pad-top text-center mt-4">
+		  <button className="btn btn-deep-orange waves-effect waves-light" type="submit" onClick={() => this.onSubmit()}>Submit</button>
+	  </div></div>
+
 </Form>
-                
- 
+
+
         );
     }
 }

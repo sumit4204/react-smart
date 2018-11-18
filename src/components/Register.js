@@ -1,98 +1,82 @@
-import React, { Component } from 'react';
-import './SignUp.css'
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import './Register.css'
+import React from 'react';
+import {Container,Row, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {  Route, Link, NavLink,  HashRouter } from "react-router-dom";
+import  './images/steve-johnson-628975-unsplash.jpg';
 
-
-class SignUp extends Component {
-
-    constructor(props) {
-        super(props);
-    this.state={
-        user: "",
-        id: "",
-        address: "",
-        pwd: "",
-        con: ""
-    }
-
-    this.onChangeEvent = this.onChangeEvent.bind();
-
+class Register extends React.Component  {
+  constructor(props) {
+    super(props);
+this.state={
+    user: "",
+    id: "",
+    address: "",
+    pwd: "",
+    con: ""
 }
 
-    onChangeEvent = ({target}) => {
+this.onChangeEvent = this.onChangeEvent.bind();
 
-    //    this.setState({[target.name] : target.value});
-    //    console.log(this);
-    // }
-// 
-    // onSubmit= () =>{
-        // console.log(                                                                                                            ;mṁṁṁ,ṁ  ...............                                                                                                                                p ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,ṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁṁthis.state.user);
-        // console.log(this.state.pwd);
-        // console.log(this.state.id); 
-        console.log(this.state.con); 
-        console.log(this.state.address);
-    }
+}
+onChangeEvent = ({target}) => {
 
-    onSubmit= () =>{
-        //console.log(this.state);
-        console.log("Hi there");
-        console.log(this, "hi");
-        console.log(this.state.OrganizationName);
-        console.log(this.state.OrganizationId);
-        console.log(this.state.OrganizationAddress);
-    
-    }
-
-render()
-    {
-        return(
-            <div>
-                <br/>
-            <Form>
-            <br/>
-            <FormGroup row>
-            <br/>
-            <Label for="uname" sm={2}>OrganizationName</Label>
-            <Col sm={10}>
-              <Input type="text" name="user" id="uname" placeholder="Enter OrganizationName"  onChange={this.onChangeEvent} />
-            </Col>
-            
-          </FormGroup>
-          <FormGroup row>
-            <Label for="pass" sm={2}>OrganizationPassword</Label>
-            <Col sm={10}>
-              <Input type="password" name="pwd" id="pass" placeholder="Enter OrganizationPassword" onChange={this.onChangeEvent} />
-            </Col>
-          </FormGroup>
-          <FormGroup row>
-            <Label for="id1" sm={2}>OrganizationId</Label>
-            <Col sm={10}>
-              <Input type="text" name="id" id="id1" placeholder="Enter OrganizationId" onChange={this.onChangeEvent} />
-            </Col>
-          </FormGroup>
-          <FormGroup row>
-            <Label for="add" sm={2}>OrganizationAddress</Label>
-            <Col sm={10}>
-              <Input type="textarea" name="address" id="add" placeholder="Enter Organization address" onChange={this.onChangeEvent} />
-            </Col>
-          </FormGroup>
-          <FormGroup row>
-            <Label for="contact" sm={5}>Organization RegNo.</Label>
-            <Col sm={10}>
-              <Input type="number" name="con" id="contact" placeholder="Enter Organization Registration number" onChange={this.onChangeEvent} />
-            </Col>
-          </FormGroup>
-          <FormGroup check row>
-         <Col sm={{ size: 10, offset: 2 }}>
-           <Button onClick={() => this.onSubmit()}>Sign Up</Button>
-         </Col>
-       </FormGroup>
-     </Form>
-     </div>
- 
-        );
-    }
+   this.setState({[target.name] : target.value});
+   console.log(this);
 }
 
+onSubmit= () =>{
+    console.log(this.state.user);
+      console.log(this.state.pwd);
+    console.log(this.state.id);
+    console.log(this.state.con);
+    console.log(this.state.address);
 
-export default SignUp
+    this.props.history.push("/Login");
+}
+
+  render() {
+    return(
+        <Form className="background1">
+
+  <div className="pad-top ">
+
+        <div className="form-header warm-flame-gradient rounded ">
+            <h3 className="my-3"><i className="fa"></i>SIGN UP</h3>
+        </div>
+       <div className="fix">
+        <lab for="uname" className=" grey-text ">Username</lab>
+        <input type="text" id="uname" name="uname" placeholder="Enter username"  onChange={this.onChangeEvent}/>
+        </div>
+      <div class="fix">
+        <lab for="pass" className=" grey-text ">Password</lab>
+        <input type="password"name="password" id="pass" placeholder="Enter password" onChange={this.onChangeEvent} />
+   </div>
+   <div class="fix">
+   <lab for="id1" className=" grey-text ">Identifier&nbsp;</lab>
+        <input type="text"name="id" id="id1" placeholder="Enter id" onChange={this.onChangeEvent} />
+  </div>
+  <div class="fix">
+        <lab for="contact" className=" grey-text ">Contact&nbsp; &nbsp;</lab>
+        <input type="number"name="con" id="contact" placeholder="Enter contact" onChange={this.onChangeEvent} />
+   </div>
+   <div class="fix">
+        <lab for="add" className=" grey-text ">Address  </lab>
+        <input type="textarea"name="address" id="add" placeholder="Enter address" onChange={this.onChangeEvent} />
+ </div>
+
+ <div className="pad-top text-center mt-4">
+            <button className="btn btn-deep-orange waves-effect waves-light" type="submit" onClick={() => this.onSubmit()}>Sign Up</button>
+        </div></div>
+        <br/>
+    <div className="modal-footer">
+        <div className="options font-weight-light">
+            <p>Already a member? <Link to="/Login">Login</Link></p>
+            {/* <p>Forgot <a href="#">Password?</a></p> */}
+        </div>
+    </div>
+</Form>
+
+    );
+  }
+}
+export default Register

@@ -1,4 +1,4 @@
-.form-control {
+/* .form-control {
     width: 50% !important;
     display:inline-block  !important;
   }
@@ -11,20 +11,22 @@
     background: -o-linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
     background: linear-gradient(to bottom, #00589F 50%, #0073CF) !important;
     color: white;
+
   }
-  
+
+
   div.well{
     height: 250px;
-  } 
-  
+  }
+
   .Absolute-Center {
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
   }
-  
+
   .Absolute-Center.is-Responsive {
-    width: 10%; 
+    width: 10%;
     height: 10%;
     min-width: 200px;
     max-width: 400px;
@@ -42,10 +44,9 @@
     height: 100px;
     background-color: #ccc;
     border-radius: 3px;
-  }
-  
+  } */
+
   /* .col-form-label {
-   
+
     display: flex !important;
     padding-inline-start: 5rem !important; */
-

@@ -7,14 +7,14 @@ col-form-label {
 
 select {
     width: 51%;
-    height:2.5rem;
+    height:3.7rem;
     padding: 10px ;
     border: none;
     border-radius: 4px;
     background-color: #f1f1f1;
 }
 label{
-    padding-right: 15rem !important; 
+    padding-right: 15rem !important;
     display: flex !important;
     padding-left: 7rem !important;
     line-height: 0rem;
@@ -22,7 +22,16 @@ label{
     /* margin-left: 0 !important; */
     /* padding-right: 0rem!important;  */
     /* margin-top: 0%;*/
-} 
+}
 .pad-left{
     padding-left: 2rem;
 }
+.pad-top8{
+    padding-top:4rem;
+}
+.background8{
+    background-image: url('./images/jonathan-brinkhorst-400665-unsplash.jpg');
+    background-size: cover;
+    height:70rem;
+    width:110rem;
+  }

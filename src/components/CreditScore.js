@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './SignUp.css'
+import './CreditScore.css'
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Web3 from 'web3';
 
@@ -129,11 +129,11 @@ class CreditScore extends Component {
 			}
 		]);
 
-		this.state.contractInstance = smartContract.at('0x3c857430e54a6a43d381d1923a211465013edcdd');
+		this.state.contractInstance = smartContract.at('0xdd0d5a6429d764359ce5ba0d0610217b94a2e00a');
 
 }
 
-    
+
 
     onChangeEvent = ({target}) => {
 
@@ -150,7 +150,7 @@ class CreditScore extends Component {
 
         this.state.contractInstance.getCustomerRating(this.state.custPublicKey, {
 			gas: 300000,
-			 from: '0x36e49682b813b42cb459b92f3932f43c70f817d7'
+			 from: '0x4be1dc36393f993f08131c887b43fb24b0c66840'
 		}, (err, result) => {
 			if(result) {
                 console.log("SSSSS", result);
@@ -161,41 +161,39 @@ class CreditScore extends Component {
 				console.log(err)
 			}
 		});
-        
+
     }
 render()
     {
         return(
-    <Form>
-        
-        <br/>
-        <br/>
-        <br/>
-    <FormGroup row>
-        
-    <Label for="pubkey" sm={1}>PublicKey</Label>
-    <Col sm={10}>
-      <Input type="text" name="custPublicKey" id="pubkey" placeholder="Enter public key"  onChange={this.onChangeEvent} />
-    </Col>
-  </FormGroup>
-  <FormGroup row>
-    <Label for="id1" sm={1}>Id</Label>
-    <Col sm={10}>
-      <Input type="text" name="id" id="id1" placeholder="Enter id"  onChange={this.onChangeEvent} />
-    </Col>
-  </FormGroup>
+<Form className="background6">
 
-  <FormGroup check row>
-         <Col sm={{ size: 10, offset: 2 }}>
-           <Button onClick={() => this.onSubmit()}>Generate Credit Score</Button>
-         </Col>
-       </FormGroup>
-       <div id="container">
-                  
-                  </div>
-     </Form>
-                
- 
+<div className="pad-top7">
+
+	  <div className="form-header warm-flame-gradient rounded ">
+		  <h3 className="my-3"><i className="fa"></i>ADD CUSTOMER</h3>
+	  </div>
+	 <div className="fix">
+	  <lab for="custPublicKey" className=" grey-text ">Customer Public Key</lab>
+	  <input type="text" id="custPublicKey" name="custPublicKey" placeholder="Enter public key"  onChange={this.onChangeEvent}/>
+	  </div>
+	  <div className=" fix">
+ <lab for="id" className=" grey-text ">Customer Identity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</lab>
+	  <input type="text"name="id" id="id" placeholder="Enter id" onChange={this.onChangeEvent} />
+</div>
+
+<div className="pad-top6 text-center mt-4">
+<div className="pad-bot1">
+		  <button className="btn btn-deep-orange waves-effect waves-light " type="submit" onClick={() => this.onSubmit()}>Generate Credit Score</button>
+		 </div>
+		  <div id="container" className="pad-above">
+	  </div>
+	  </div>
+
+	  </div>
+
+</Form>
+
         );
     }
 }
