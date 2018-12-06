@@ -135,7 +135,7 @@ class CustomerDetail extends Component {
 			}
 		]);
 
-		this.state.contractInstance = smartContract.at('0xdd0d5a6429d764359ce5ba0d0610217b94a2e00a');
+		this.state.contractInstance = smartContract.at('0xdd0f6048456cdda7bd2f4e153ba3d441ec5353a8');
 
 
 }
@@ -158,7 +158,7 @@ onChangeEvent = ({target}) => {
 
         this.state.contractInstance.addCustomerDetails(this.state.custPublicKey, this.state.uname, this.state.clicks, {
 			gas: 300000,
-			 from: '0x4be1dc36393f993f08131c887b43fb24b0c66840'
+			 from: '0x8b2b56ab3427755e57214325c3f57decef20b671'
 		}, (err, result) => {
 			if(result) {
 				console.log("Customer details added");
@@ -208,7 +208,7 @@ render()
           <lab for="accType" class="pad-left grey-text">Account Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</lab>
           <select name="accType" id="accType" defaultValue="please select" onChange={this.onChangeEvent}>
           <option value="please select" >please select account type</option>
-          <option value="loan">Laon</option>
+          <option value="loan">Loan</option>
           <option value="credit card">Credit Card</option>
           <option value="cheque">Chequebook</option>
           </select>

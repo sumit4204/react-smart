@@ -36,7 +36,7 @@ class Login extends React.Component  {
        }
   render() {
     return(
-        <Form className="background">
+        <Form className="background-login">
   <div className="pad-top ">
 
 

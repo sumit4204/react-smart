@@ -36,7 +36,7 @@ input{
       border-radius: .25rem!important;
   }
   .grey-text {
-    color: 6495ED!important;
+    color: #FFFFFF!important;
   font-size: 30px;
   }
 
@@ -136,6 +136,6 @@ input{
   .background1{
     background-image: url('./images/steve-johnson-628975-unsplash.jpg');
     background-size: cover;
-    height:110rem;
-    width:110rem;
+    height:120rem;
+    width:164rem;
   }

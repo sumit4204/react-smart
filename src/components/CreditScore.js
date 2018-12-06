@@ -129,7 +129,7 @@ class CreditScore extends Component {
 			}
 		]);
 
-		this.state.contractInstance = smartContract.at('0xdd0d5a6429d764359ce5ba0d0610217b94a2e00a');
+		this.state.contractInstance = smartContract.at('0xdd0f6048456cdda7bd2f4e153ba3d441ec5353a8');
 
 }
 
@@ -150,15 +150,16 @@ class CreditScore extends Component {
 
         this.state.contractInstance.getCustomerRating(this.state.custPublicKey, {
 			gas: 300000,
-			 from: '0x4be1dc36393f993f08131c887b43fb24b0c66840'
+			 from: '0x8b2b56ab3427755e57214325c3f57decef20b671'
 		}, (err, result) => {
 			if(result) {
-                console.log("SSSSS", result);
+                console.log("Result is ", result);
+
                 var obj = JSON.parse(result);
-                console.log("boject = ", obj);
+                console.log("object = ", obj);
 				document.getElementById('container').innerHTML="This customer's Credit Score is: <b>" + obj + "</b>";
 			} else {
-				console.log(err)
+				console.log("Error is ",err);
 			}
 		});
 
@@ -189,9 +190,7 @@ render()
 		  <div id="container" className="pad-above">
 	  </div>
 	  </div>
-
 	  </div>
-
 </Form>
 
         );

@@ -38,7 +38,7 @@ input{
     border-radius: .25rem!important;
 }
 .grey-text {
-  color:6495ED!important;
+  color: #FFFFFF!important;
 font-size: 50px;
 }
 
@@ -132,9 +132,12 @@ lab {
    line-height: 5;
  }
 
-.background{
-  background-image: url('./images/steve-johnson-628975-unsplash.jpg');
+.background-login{
+background-image: url('./images/steve-johnson-628975-unsplash.jpg');
   background-size: cover;
-  height:70rem;
-  width:110rem;
+  height:92rem;
+     width:164rem;
+}
+.container{
+margin-left:0rem !important;
 }
